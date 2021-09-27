@@ -57,3 +57,18 @@ Scene中对象的初始化与文件的IO操作可以进一步封装，增强代�
 
 [![asciicast](https://asciinema.org/a/438236.svg)](https://asciinema.org/a/438236)
 
+
+
+## 任务三
+
+#### 类图
+
+![](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/jwork-2021/jw02-OraOraOra0ra/master/s191220102/src/task3/class.puml)
+
+#### 选择排序
+
+[![asciicast](https://asciinema.org/a/438296.svg)](https://asciinema.org/a/438296)
+
+#### 快速排序
+
+[![asciicast](https://asciinema.org/a/438297.svg)](https://asciinema.org/a/438297)

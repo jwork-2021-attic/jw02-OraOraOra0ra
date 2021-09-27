@@ -1,0 +1,97 @@
+@startuml
+
+class Matrixable{
+    void setPosition(Position position);
+    Position getPosition();
+    int getValue();
+}
+
+class Monster{
+    int r,g,b,no;
+    Position position;
+
+    Monster(int r, int g, int b, int no);
+    int rank();
+    String toString();
+    void setPosition(Position position);
+    Position getPosition();
+    void swapPosition(Monster another);
+    int getValue();
+}
+
+class Create{
+    Monster[][] monster;
+
+    Create(Matrix matrix, int row, int col);
+    List randomList(int size);
+    Monster[] getMonster();
+}
+
+class Color{
+    static int[] color;
+}
+
+class Matrix{
+    class Position;
+    Position[] positions;
+
+    Matrix(int length);
+    void put(Matrixable linable, int i);
+    Matrixable get(int i);
+    String toString();
+    Matrixable[] toArray();
+}
+
+class Sorter{
+    void load(int[] elements);
+    void sort();
+    String getPlan();
+}
+
+class SelectSorter{
+    int[] a;
+    String plan;
+
+    void load(int[] a);
+    void swap(int i, int j);
+    void sort();
+    String getPlan();
+}
+
+class QuickSorter{
+    int[] a;
+    String plan;
+
+    void load(int[] a);
+    void swap(int i, int j);
+    void sort();
+    void quickSort(int left, int right);
+    String getPlan();
+}
+
+class Snake{
+    static Snake theSnake;
+    Sorter sorter;
+    Create create;
+
+    Snake();
+    static Snake getTheSnake();
+    void setSorter(Sorter sorter);
+    String matrixUp(Matrix matrix);
+    String[] parsePlan(String plan);
+    void execute(String step);
+}
+
+Monster ..|> Matrixable
+Monster ..> Matrix
+Create --> Monster
+Create ..> Color
+Matrix --> Matrixable
+SelectSorter ..|> Sorter
+QuickSorter ..|> Sorter
+Snake ..> Matrix
+Snake ..> SelectSorter
+Snake ..> QuickSorter
+
+
+@enduml
