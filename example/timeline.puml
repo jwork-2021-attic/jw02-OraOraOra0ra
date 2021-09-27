@@ -1,0 +1,24 @@
+@startuml
+entity 1 as one #red
+entity 2 as two #orange
+entity 3 as three #yellow
+entity 4 as four #green
+entity 5 as five #blue
+entity 6 as six #indigo
+entity 7 as seven #purple
+
+seven <-> five : swap
+seven <-> two : swap
+seven <-> six : swap
+seven <-> four : swap
+seven <-> one : swap
+five <-> two  : swap
+six <-> four : swap
+six <-> one : swap
+three <-> two : swap
+five <-> four  : swap
+five <-> one : swap
+four <-> one : swap
+three <-> one : swap
+two <-> one : swap
+@enduml

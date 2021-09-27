@@ -1,0 +1,70 @@
+@startuml
+
+class Linable{
+    void setPosition(Position position);
+    Position getPosition();
+    int getValue();
+}
+
+class Gourd{
+    int r,g,b;
+    Position position;
+
+    Gourd(int r, int g, int b);
+    static getGourdByRank(int rank);
+    int rank();
+    String toString();
+    void setPosition(Position position);
+    Position getPosition();
+    void swapPosition(Gourd another);
+    int getValue();
+}
+
+class Line{
+    class Position;
+    Position[] positions;
+
+    Line(int length);
+    void put(Linable linable, int i);
+    Linable get(int i);
+    String toString();
+    Linable[] toArray();
+}
+
+class Sorter{
+    void load(int[] elements);
+    void sort();
+    String getPlan();
+}
+
+class BubbleSorter{
+    int[] a;
+    String plan;
+
+    void load(int[] a);
+    void swap(int i, int j);
+    void sort();
+    String getPlan();
+}
+
+class Geezer{
+    static Geezer theGeezer;
+    Sorter sorter;
+
+    Geezer();
+    static Geezer getTheGeezer();
+    void setSorter(Sorter sorter);
+    String lineUp(Line line);
+    String[] parsePlan(String plan);
+    void execute(String step);
+}
+
+Gourd ..|> Linable
+Gourd ..> Line
+Line --> Linable
+BubbleSorter ..|> Sorter
+Geezer ..> Line
+Geezer ..> BubbleSorter
+
+
+@enduml

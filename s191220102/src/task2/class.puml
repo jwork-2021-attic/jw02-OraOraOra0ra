@@ -1,0 +1,97 @@
+@startuml
+
+class Linable{
+    void setPosition(Position position);
+    Position getPosition();
+    int getValue();
+}
+
+class Monster{
+    int r,g,b,no;
+    Position position;
+
+    Monster(int r, int g, int b, int no);
+    int rank();
+    String toString();
+    void setPosition(Position position);
+    Position getPosition();
+    void swapPosition(Monster another);
+    int getValue();
+}
+
+class Create{
+    Monster[] monster;
+
+    Create(Line line, int size);
+    List randomList(int size);
+    Monster[] getMonster();
+}
+
+class Color{
+    static int[] color;
+}
+
+class Line{
+    class Position;
+    Position[] positions;
+
+    Line(int length);
+    void put(Linable linable, int i);
+    Linable get(int i);
+    String toString();
+    Linable[] toArray();
+}
+
+class Sorter{
+    void load(int[] elements);
+    void sort();
+    String getPlan();
+}
+
+class SelectSorter{
+    int[] a;
+    String plan;
+
+    void load(int[] a);
+    void swap(int i, int j);
+    void sort();
+    String getPlan();
+}
+
+class QuickSorter{
+    int[] a;
+    String plan;
+
+    void load(int[] a);
+    void swap(int i, int j);
+    void sort();
+    void quickSort(int left, int right);
+    String getPlan();
+}
+
+class Snake{
+    static Snake theSnake;
+    Sorter sorter;
+    Create create;
+
+    Snake();
+    static Snake getTheSnake();
+    void setSorter(Sorter sorter);
+    String lineUp(Line line);
+    String[] parsePlan(String plan);
+    void execute(String step);
+}
+
+Monster ..|> Linable
+Monster ..> Line
+Create --> Monster
+Create ..> Color
+Line --> Linable
+SelectSorter ..|> Sorter
+QuickSorter ..|> Sorter
+Snake ..> Line
+Snake ..> SelectSorter
+Snake ..> QuickSorter
+
+
+@enduml
