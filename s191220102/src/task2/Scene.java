@@ -8,15 +8,15 @@ public class Scene {
 
     public static void main(String[] args) throws IOException {
 
-        Line line = new  Line(256);
+        Line line = new  Line(64);
 
         Snake theSnake = Snake.getTheSnake();
 
-        Create create = new Create(line,256);
+        Create create = new Create(line,64);
 
         theSnake.setCreate(create);
 
-        Sorter sorter = new SelectSorter();
+        Sorter sorter = new QuickSorter();
 
         theSnake.setSorter(sorter);
 
